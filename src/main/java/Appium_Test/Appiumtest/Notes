@@ -1,0 +1,10 @@
+-->driver.findElements(by.id(packageName+":id/device_property_value"));
+
+-->In general if you want to find element under a parent element using xpath,
+add a . to the xpath to say that the child element xpath to be searched under the
+given parent element. So in your case you can try something like :
+
+mobileElement.findElement(By.xpath(".(xpath of the child element)")
+For example mobileElement.findElement(By.xpath(".//div[@class='xyz']")
+
+-->@BeforeClass and @BeforeTest Difference
