@@ -25,15 +25,7 @@ public class Issue {
     }
 }
 
-	
-	@AndroidFindBy(id = "layissues")
-	private WebElement lay_issue;
-	
-	public void click_issue()
-	{
-		lay_issue.click();
-	}
-	
+	//valid
 	@AndroidFindBy(id = "fabaddform")
 	public WebElement add_issue;
 	
@@ -60,12 +52,7 @@ public class Issue {
 		back_no.click();
 	}
 	
-	@AndroidFindBy(xpath = "//android.widget.LinearLayout[(@resource-id='com.pazo.ppz:id/issuename')]")
-	@AndroidFindBy(id = "issuename")
-	private WebElement issue_name1;
-	public void enter_issue_name(String a){
-		issue_name1.sendKeys(a);
-	}
+	
 	
 	@AndroidFindBy(xpath = "//android.widget.LinearLayout[(@resource-id='com.pazo.ppz:id/layoutDepartment')]")
 	public WebElement department;
@@ -105,114 +92,56 @@ public class Issue {
 	public void submit_issue(){
 		submit1.click();
 	}
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[(@text='House keeping')]")
-	public WebElement department_name1;
-	
-	
-		
-	@AndroidFindBy(id = "sendcomment")
-	public WebElement issue_send_comment;
-	
-	@AndroidFindBy(id = "editText")
-	public WebElement issue_Type_text;
-	
-	@AndroidFindBy(id = "ivexpclose")
-	public WebElement issue_view_issue;
-	
-	//**issue more option
-	
-	@AndroidFindBy(id = "More options")
-	public WebElement issue_more_option;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Share Issuee']")
-	public WebElement issue_share_issue;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Change Due Date']")
-	public WebElement issue_change_duedate;
-	
-	/*@AndroidFindBy(xpath = "//android.widget.TextView[@text='Change Status']")
-	public WebElement issue_change_status;*/
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Re-Assign Issuee']")
-	public WebElement issue_reassign;
-	
-	
-	
-	@AndroidFindBy(id = "tvdept")
-	public WebElement reassign_department;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='General']")
-	public WebElement issue_depatment_general;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='House keeping']")
-	public WebElement issue_depatment2;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Maintainance']")
-	public WebElement issue_depatment3;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='compliance']")
-	public WebElement issue_depatment4;
-	
-	@AndroidFindBy(id = "submit")
-	public WebElement issue_department_submit;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Duplicate']")
-	public WebElement issue_duplicate;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Completed']")
-	public WebElement issue_completed;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Deferred']")
-	public WebElement issue_deferred;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Close']")
-	public WebElement issue_close;
-	
-	@AndroidFindBy(xpath = "//android.widget.TextView[@text='Reopen']")
-	public WebElement issue_reopen;
-	
+	//valid
 	@AndroidFindBy(id="ivfilter")
 	private WebElement Issue_page_filter;
 	public void click_filter(){
 		Issue_page_filter.click();
 	}
 	
+	//valid
 	@AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='More options']")
 	public WebElement more_option;
 	public void click_more_option(){
 		more_option.click();
 	}
 	
+	//valid
 	@AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='My Issuess']")
 	public WebElement my_issue;
 	public void click_my_issue(){
 		my_issue.click();
 	}
 	
+	//valid
 	@AndroidFindBy(xpath = "//android.support.v7.app.ActionBar.Tab[@content-desc='Dept Issuess']")
 	public WebElement dept_issue;
 	public void click_dept_issue(){
 		dept_issue.click();
 	}
 	
+	//valid
 	@AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Raised by Me']")
 	public WebElement raise_by_me;
 	public void click_raise_by_me(){
 		raise_by_me.click();
 	}
 	
+	//valid
 	@AndroidFindBy(id="tvIStitle")
 	public List<WebElement> Issue_Title;
 	public void issue_Title(int a){
 		Issue_Title.get(a).click();
 	}
 	
-	@AndroidFindBy(id="ivexpclose")
-	private WebElement View_issue;
-	public void click_view_issue(){
-		View_issue.click();
-	}
+	//valid
+		@AndroidFindBy(id="tvIsstatus")
+		public List<WebElement> Issue_status;
+		public void Issue_status(int a){
+			Issue_Title.get(a).click();
+		}
+	
+	
 	
 	@AndroidFindBy(id="ivback")
 	private WebElement back;
@@ -277,7 +206,9 @@ public class Issue {
 		int b=issue_title_in_list.get(0).getText().compareTo(a);
 		 return b;
 	}
-	
+	public void click_issue_inList(int a){
+		issue_title_in_list.get(a).click();
+	}
 	
 	@AndroidFindBy(id = "btnnumber")
 	public WebElement due_date_time;
@@ -300,7 +231,14 @@ public class Issue {
 		 
 	}
 	
-	
+	@AndroidFindBy(id = "issuename")
+	private WebElement issue_name1;
+	public void click_issue_name(){
+		issue_name1.click();
+	}
+	public void enter_issue_name(String a){
+		issue_name1.sendKeys(a);
+	}
 	
 	@AndroidFindBy(id = "photo1")
 	public WebElement attach_photo;
@@ -309,6 +247,14 @@ public class Issue {
 		 
 	}
 	
+	@AndroidFindBy(id = "error")
+	public WebElement error_message;
+	public String error_mesage(){
+		String str=error_message.getText();
+		return str;
+		
+		 
+	}
 	
 	
 	
@@ -318,18 +264,7 @@ public class Issue {
         wait.until(ExpectedConditions.visibilityOf(element));
 }
 	
-	public void issue() throws Exception {
 	
-	 lay_issue.click();
-	 add_issue.click();
-	 location1.click();
-	 issue_name1.sendKeys("i hate you");
-	 department1.click();
-	 department_name1.click();
-	 user1.click();
-	 user_name.click();
-	 submit1.click();
-	 	
-	}
+	
 
 }

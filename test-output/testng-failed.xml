@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Pazo Android Field app]">
+  <test name="Login Use cases(failed)">
+    <classes>
+      <class name="Appium_Test.Appiumtest.Login1">
+        <methods>
+          <include name="testCal_wrongUser_rightPass"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+          <include name="Login_incorrecCredentials"/>
+          <include name="loginWithValodEmail_InvalidPass"/>
+          <include name="loginWithValidCredentials"/>
+        </methods>
+      </class> <!-- Appium_Test.Appiumtest.Login1 -->
+    </classes>
+  </test> <!-- Login Use cases(failed) -->
+  <test name="Issue use cases(failed)">
+    <classes>
+      <class name="Appium_Test.Appiumtest.issue_create">
+        <methods>
+          <include name="Issue_raised_without_department"/>
+          <include name="Issue_reassign"/>
+          <include name="Issue_raised"/>
+          <include name="Issue_raised_without_name"/>
+          <include name="setUp"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- Appium_Test.Appiumtest.issue_create -->
+    </classes>
+  </test> <!-- Issue use cases(failed) -->
+  <test name="Checklist Use cases(failed)">
+    <classes>
+      <class name="Appium_Test.Appiumtest.Submit_checklist">
+        <methods>
+          <include name="submit_checklist_in_plus_button"/>
+          <include name="submit_checklist_without_internet1"/>
+          <include name="submit_checklist_main_dashboard"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- Appium_Test.Appiumtest.Submit_checklist -->
+    </classes>
+  </test> <!-- Checklist Use cases(failed) -->
+</suite> <!-- Failed suite [Pazo Android Field app] -->

@@ -21,6 +21,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import Appium_Test.Appiumtest.Login_poi;
+import Base_page.RunOn;
 //import pom.Prog1;
 import io.appium.java_client.android.AndroidDriver;
 
@@ -44,15 +45,8 @@ public void testCal() throws Exception {
 	//calPage.login("checklist.related@gmail.com", "12345");
 	 calPage.login("checklist.related@gmail.com", "12345");
 Issue d=new Issue((AppiumDriver) driver);
-List<MobileElement> site=driver.findElements(By.id("com.pazo.ppz:id/tvsitename"));
-System.out.println(site.size());
- site.get(2).click();
- Thread.sleep(2000);
-d.issue();
 
 
-
-   
 }
 
 

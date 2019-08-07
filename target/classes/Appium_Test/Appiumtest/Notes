@@ -1,0 +1,51 @@
+-->driver.findElements(by.id(packageName+":id/device_property_value"));
+
+-->In general if you want to find element under a parent element using xpath,
+add a . to the xpath to say that the child element xpath to be searched under the
+given parent element. So in your case you can try something like :
+
+mobileElement.findElement(By.xpath(".(xpath of the child element)")
+For example mobileElement.findElement(By.xpath(".//div[@class='xyz']")
+
+-->@BeforeClass and @BeforeTest Difference
+
+--> To generate a report
+public class GenerateReport {
+		 
+	    public static void main(String[] args) throws Exception
+	    {
+	     Xl.generateReport("excel-report.xlsx");
+	    }
+	}
+	
+--> To read page source xml
+
+String xmlFormat = driver.getPageSource();
+if(xmlFormat.contains("")){
+System.out.println("Toast message displayed: "+yourToastMessage);
+}
+
+-->To read toast message
+
+package net.sourceforge.tess4j.example;
+
+import java.io.File;
+import net.sourceforge.tess4j.*;
+
+public class TesseractExample {
+
+    public static void main(String[] args) {
+        File imageFile = new File("eurotext.tif");
+        ITesseract instance = new Tesseract();  // JNA Interface Mapping
+        // ITesseract instance = new Tesseract1(); // JNA Direct Mapping
+        instance.setDatapath("tessdata"); // path to tessdata directory
+
+        try {
+            String result = instance.doOCR(imageFile);
+            System.out.println(result);
+        } catch (TesseractException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+}
+	

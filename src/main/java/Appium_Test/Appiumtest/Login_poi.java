@@ -21,7 +21,7 @@ public class Login_poi {
     }
 }
 
-	@AndroidFindBy(xpath = "//android.widget.TextView[@index='5']")
+	@AndroidFindBy(id = "loginemail")
 	public WebElement lgn_email;
 	
 	public void email_page()
@@ -123,7 +123,7 @@ public void login_UNF(String num1, String num2) throws Exception {
 		enter_pin.sendKeys(num2);
 		submit.click();
 		Thread.sleep(2000);
-		ok.click();
+		//ok.click();
 		Thread.sleep(2000);
 		//ok1.click();
 		Thread.sleep(2000);

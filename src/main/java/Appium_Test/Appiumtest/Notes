@@ -8,3 +8,44 @@ mobileElement.findElement(By.xpath(".(xpath of the child element)")
 For example mobileElement.findElement(By.xpath(".//div[@class='xyz']")
 
 -->@BeforeClass and @BeforeTest Difference
+
+--> To generate a report
+public class GenerateReport {
+		 
+	    public static void main(String[] args) throws Exception
+	    {
+	     Xl.generateReport("excel-report.xlsx");
+	    }
+	}
+	
+--> To read page source xml
+
+String xmlFormat = driver.getPageSource();
+if(xmlFormat.contains("")){
+System.out.println("Toast message displayed: "+yourToastMessage);
+}
+
+-->To read toast message
+
+package net.sourceforge.tess4j.example;
+
+import java.io.File;
+import net.sourceforge.tess4j.*;
+
+public class TesseractExample {
+
+    public static void main(String[] args) {
+        File imageFile = new File("eurotext.tif");
+        ITesseract instance = new Tesseract();  // JNA Interface Mapping
+        // ITesseract instance = new Tesseract1(); // JNA Direct Mapping
+        instance.setDatapath("tessdata"); // path to tessdata directory
+
+        try {
+            String result = instance.doOCR(imageFile);
+            System.out.println(result);
+        } catch (TesseractException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+}
+	

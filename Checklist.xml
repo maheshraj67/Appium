@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Pazo Android Field app">
+
+  <test name="Login Use cases">
+    <classes>
+      <class name="Appium_Test.Appiumtest.Login1"></class>
+    </classes>
+  </test>
+  
+  <test name="Issue use cases">
+    <classes>
+      <class name="Appium_Test.Appiumtest.issue_create"></class>
+    </classes>
+  </test> 
+  
+  <test name="Checklist Use cases">
+    <classes>
+      <class name="Appium_Test.Appiumtest.Submit_checklist"></class>
+    </classes>
+  </test> 
+  
+</suite>

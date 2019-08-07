@@ -64,11 +64,11 @@ public void setUp() throws MalformedURLException, InterruptedException{
 	
 }
 
-@Test
-public void testCal() throws Exception {
+@Test(priority =0)
+public void login_wrongUser_rightPass() throws Exception {
 	Login_poi calPage = new Login_poi((AppiumDriver) driver);
 	 
-	calPage.login_UNF("checklist@gmail.com", "12345");
+	calPage.login_UNF("checklist@gmail.com", "123456789");
 
 	if (calPage.VerifyResult("User not found."))
 		System.out.println("PASSED Test");
@@ -76,37 +76,59 @@ public void testCal() throws Exception {
 		System.out.println("FAILED Test");
    
 }
-/*@Test
-public void testCal2() throws Exception {
+@Test(priority =1)
+public void Login_inValidCredentials() throws Exception {
 	Login_poi calPage = new Login_poi((AppiumDriver) driver);
 	 
-	calPage.login("wctrg@gkjs.com", "kvf");
+	calPage.login("Checklist.related@gmail.com", "kvf");
 
-	if (calPage.VerifyResult("Invalid Params"))
-		System.out.println("PASSED Test");
-	else
-		System.out.println("FAILED Test");
-   
-}*/
-@Test
-public void login() throws Exception {
-	Login_poi calPage = new Login_poi((AppiumDriver) driver);
-	 
-	calPage.login("Checklist.related@gmail.com", "12345");
-	calPage.email_page();
-	calPage.enter_email("email");
-	calPage.enter_pass("pass");
-	calPage.click_submit();
-	
-	Thread.sleep(2000);
-	
-
-	if (calPage.VerifyResult("Invalid Params"))
+	//if (calPage.VerifyResult("Invalid PIN/Invalid Password"))
+		if (calPage.VerifyResult("Invalid Params"))
 		System.out.println("PASSED Test");
 	else
 		System.out.println("FAILED Test");
    
 }
+@Test(priority =2)
+public void loginWithValidCredentials() throws Exception {
+	Login_poi calPage = new Login_poi((AppiumDriver) driver);
+	 
+	calPage.login("Checklist.related@gmail.com", "123456789");
+	/*calPage.email_page();
+	calPage.enter_email("email");
+	calPage.enter_pass("pass");
+	calPage.click_submit();*/
+	
+	Thread.sleep(2000);
+	
+
+	if (calPage.VerifyResult("Invalid Params"))
+		System.out.println("FAILED Test");
+	else
+		System.out.println("PASSED Test");
+   
+}
+
+@Test(priority =2)
+public void loginWithValidEmail_InvalidPass() throws Exception {
+	Login_poi calPage = new Login_poi((AppiumDriver) driver);
+	 
+	calPage.login("Checklist.related@gmail.com", "12345");
+	/*calPage.email_page();
+	calPage.enter_email("email");
+	calPage.enter_pass("pass");
+	calPage.click_submit();*/
+	
+	Thread.sleep(2000);
+	
+
+	if (calPage.VerifyResult("Invalid PIN/Invalid Password"))
+		System.out.println("FAILED Test");
+	else
+		System.out.println("PASSED Test");
+   
+}
+
 
 @AfterMethod
 public void teardown(){

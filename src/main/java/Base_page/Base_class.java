@@ -23,6 +23,7 @@ import org.testng.annotations.Test;
 
 //import pom.Prog1;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 
 
@@ -50,7 +51,7 @@ public void setUp() throws MalformedURLException, InterruptedException{
 	 capabilities.setCapability("unicodeKeyboard", true);
 	 capabilities.setCapability("resetKeyboard", true);
 	 try{
-	 driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+	 driver = new AppiumDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 	 }
 	 catch (ExceptionInInitializerError error){
 	        System.out.println(error.getCause());

@@ -272,9 +272,8 @@ public class Site_dashboard_poi {
 	/*@AndroidFindBy(xpath = "android.widget.ImageButton[(@index='12')]")
 	public WebElement plus;*/
 	
-	@AndroidFindBy(id = "com.pazo.pp/burgerlayout")
-	@AndroidFindBy(id = "com.pazo.ppz:id/btnburger")
-	@AndroidFindBy(xpath = "android.widget.Button[(@index='1')]")
+	@AndroidFindBy(id = "burgerlayout")
+	@AndroidFindBy(id = "btnburger")
 	public WebElement menu;
 	
 	public void click_menu()
@@ -288,6 +287,104 @@ public class Site_dashboard_poi {
 	@AndroidFindBy(id = "com.pazo.ppz:id/tvmenuhead")
 	public WebElement active_site;
 	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> logout;
+	public void click_logout(){
+		logout.get(10).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> Contact_support;
+	public void click_Contact_support(){
+		Contact_support.get(9).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> change_pin;
+	public void click_change_pin(){
+		change_pin.get(8).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> Document;
+	public void click_Document(){
+		Document.get(7).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> Beat_patrol;
+	public void click_Beat_patrol(){
+		Beat_patrol.get(6).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> Open_issueByID;
+	public void click_Open_issueByID(){
+		Open_issueByID.get(5).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> menu_issue;
+	public void click_menu_issue(){
+		menu_issue.get(4).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> menu_message;
+	public void click_menu_message(){
+		menu_message.get(3).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> menu_checklist;
+	public void click_menu_checklist(){
+		menu_checklist.get(2).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> dashboard;
+	public void click_dashboard(){
+		dashboard.get(1).click();
+	}
+	
+	@AndroidFindBy(id = "design_menu_item_text")
+	public List<WebElement> select_site;
+	public void click_select_site(){
+		select_site.get(0).click();
+	}
+	
+	@AndroidFindBy(id = "fabcreateTicket")
+	public WebElement create_ticket;
+	public void click_create_ticket(){
+		create_ticket.click();
+	}
+	
+	@AndroidFindBy(id = "ivback")
+	private WebElement back;
+	public void click_back(){
+		back.click();
+	}
+	
+	@AndroidFindBy(id = "etDescription")
+	private WebElement enter_disc;
+	public void enter_ticket_discription(){
+		enter_disc.sendKeys("hello");
+	}
+	
+	@AndroidFindBy(id = "btnsubmitticket")
+	private WebElement submit;
+	public void click_submit(){
+		submit.click();
+	}
+	
+	
+	@AndroidFindBy(id = "android:id/message")
+	public WebElement error_message;
+	public String get_errormessage(){
+		String err=error_message.getText();
+		return err;
+		
+	}
 	
 	
 	
